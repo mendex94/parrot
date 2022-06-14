@@ -1,4 +1,4 @@
 #arquivos backend que não vão para o github
 
-node_modules
+node_modules/
 .env
