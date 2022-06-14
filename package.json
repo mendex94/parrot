@@ -1,0 +1,30 @@
+{
+    "name": "parrot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon api/src/app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mendex94/parrot.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mendex94/parrot/issues"
+    },
+    "homepage": "https://github.com/mendex94/parrot#readme",
+    "dependencies": {
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "mysql2": "^2.3.3",
+        "sequelize": "^6.20.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.16",
+        "sequelize-cli": "^6.4.1"
+    }
+}
