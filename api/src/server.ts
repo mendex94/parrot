@@ -1,11 +1,11 @@
 import express from 'express';
-// import handleMiddleware from './middlewares/handleMiddleware';
+import handleError from './middlewares/handleError';
 
 const app = express();
 const routes = require("./routes");
 
 app.use(express.json());
 app.use(routes);
-// app.use(handleMiddleware);
+app.use(handleError);
 
 export default app;
