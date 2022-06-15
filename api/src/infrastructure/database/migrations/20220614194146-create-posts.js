@@ -1,3 +1,6 @@
+const user = require('../../../models/users')
+
+
 'use strict';
 module.exports = {
     async up(queryInterface, Sequelize) {
