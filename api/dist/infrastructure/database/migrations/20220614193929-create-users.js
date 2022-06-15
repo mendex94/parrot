@@ -1,26 +1,24 @@
-const user = require('../../../domain/usuario/models/users')
-
-
 'use strict';
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.createTable('Posts', {
+        await queryInterface.createTable('Users', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            content: {
+            nome: {
                 type: Sequelize.STRING
             },
-            user_id: {
-                type: Sequelize.INTEGER,
-                references: {
-                    model: 'users',
-                    key: 'id'
-                },
-                allowNull: false,
+            email: {
+                type: Sequelize.STRING
+            },
+            apto: {
+                type: Sequelize.INTEGER
+            },
+            password: {
+                type: Sequelize.STRING
             },
             createdAt: {
                 allowNull: false,
@@ -33,6 +31,6 @@ module.exports = {
         });
     },
     async down(queryInterface, Sequelize) {
-        await queryInterface.dropTable('Posts');
+        await queryInterface.dropTable('Users');
     }
 };

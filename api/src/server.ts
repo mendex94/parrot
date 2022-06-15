@@ -1,6 +1,6 @@
 import express from 'express';
 import handleError from './middlewares/handleError';
-const db = require('../src/database');
+const db = require('../src/infrastructure/database')
 
 const app = express();
 const routes = require("./routes");
