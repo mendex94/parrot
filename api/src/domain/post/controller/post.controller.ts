@@ -1,4 +1,4 @@
-// import { Posts } from ""; 
+import { Posts } from "../../."; 
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 

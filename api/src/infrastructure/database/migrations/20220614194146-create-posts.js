@@ -13,11 +13,8 @@ module.exports = {
             },
             user_id: {
                 type: Sequelize.INTEGER,
-                reference: {
-                    model: {
-                        model: 'Users',
-                        schema: 'parrot'
-                    },
+                references: {
+                    model: 'users',
                     key: 'id'
                 },
                 allowNull: false,
