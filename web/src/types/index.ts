@@ -28,3 +28,12 @@ export interface UserState {
     apartamento?: string,
     foto?: string,
 }
+
+export interface Posts {
+    id: number,
+    user_nome: string | undefined,
+    user_email: string | undefined,
+    user_apto: string | undefined,
+    comentario: string,
+    user_id: number | undefined,
+}
