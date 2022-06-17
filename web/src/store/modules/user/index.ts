@@ -1,11 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { UserState, Permission } from '../../../types'
+import { UserState } from '../../../types'
 
 const initialState: UserState = {
     isLogged: false,
-    accessToken: '',
-    permission: Permission.nothing,
-    id: undefined,
+    token: ''
 }
 
 const usersSlice = createSlice({
@@ -16,13 +14,11 @@ const usersSlice = createSlice({
         signIn(state, action){
             Object.assign(state, {
                 isLogged: true,
-                accessToken: action.payload.accessToken,
-                permission: Permission[action.payload.permission],
-                id: action.payload.user.id,
-                nome: action.payload.user.nome,
-                email: action.payload.user.email,
-                apartamento: action.payload.user.apartamento,
-                foto: action.payload.user.foto
+                token: action.payload.token,
+                nome: action.payload.logUser.nome,
+                email: action.payload.logUser.email,
+                apto: action.payload.logUser.apto,
+                id: action.payload.logUser.id
             })
         },
         //SignOut

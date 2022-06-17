@@ -21,18 +21,21 @@ const LoginForm: React.FC<LoginFormProps> = ({setSignIn}) => {
                 password:''
             },
             onSubmit: async values => {
-                const {accessToken, user} = await login(values)
-                dispatch(signIn({accessToken, permission: user.permission, user}))
-                //@ts-ignore
-                api.defaults.headers["Authorization"] = `Bearer ${accessToken}`
-                navigate('/feed')
+                    const { token, logUser } = await login(values)
+                    console.log(logUser)
+                    dispatch(signIn({
+                        token, 
+                        logUser
+                    }))
+                    api.defaults.headers.common.Authorization = `Bearer ${token}`;
+                    navigate('/feed')               
             }
         })
 
         return (
         <div className='relative flex h-screen w-screen flex-col items-center justify-center bg-black/60'>
-        <img src={BackgroundImage} alt='Parrot background image' className='-z-50 object-cover w-full h-full'/>
-        <form onSubmit={formik.handleSubmit} className='absolute mt-24 space-y-8 rounded bg-white py-10 px-6 md:mt-0 max-w-md md:px-14 flex flex-col w-full items-center'>
+        <img src={BackgroundImage} alt='Parrot background image' className='-z-50 object-cover w-screen h-screen'/>
+        <form onSubmit={formik.handleSubmit} className='absolute space-y-8 rounded bg-white py-5 px-6 md:mt-0 max-w-md md:px-14 flex flex-col w-full items-center'>
             <img src={Logo} alt='Parrot logo' className='w-[171px] h-[161px]'/>
             <h1 className='text-center font-bold text-[24px] text-[#000000] '>LOGIN</h1>
             <label>

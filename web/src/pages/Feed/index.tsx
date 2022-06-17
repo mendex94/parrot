@@ -20,7 +20,7 @@ export default function Feed() {
         <Header />
         <PostForm setPosts={setPosts}/>
         {postList.map((post)=> (
-          <FeedPost post={post}/> 
+          <FeedPost post={post} key={Math.floor(Math.random() * 100) + 1}/> 
         )).reverse()}
     </>
   )

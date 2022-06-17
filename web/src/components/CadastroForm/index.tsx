@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import { signIn } from '../../store/modules/user'
 import { api } from '../../services/baseUrl'
+import { login } from '../../services/userLogin'
 
 interface CadastroProps {
     reset: () => void;
@@ -22,15 +23,14 @@ const Cadastro: React.FC<CadastroProps> = ({ reset }) => {
             nome:'',
             email: '',
             password: '',
-            confirmPassword: '',
-            apartamento: '',
-            foto: ''
+            apto: ''
         },
         onSubmit: async values => {
-            const {accessToken, user} = await createUser({...values, permission: 1})
-            dispatch(signIn({accessToken, permission: user.permission, user}))
+            await createUser(values)
+            const { token, logUser } = await login(values)
+            dispatch(signIn({token, logUser}))
             //@ts-ignore
-            api.defaults.headers["Authorization"] = `Bearer ${accessToken}`
+            api.defaults.headers["Authorization"] = `Bearer ${token}`
             navigate('/feed')
         }
     })
@@ -54,13 +54,10 @@ const Cadastro: React.FC<CadastroProps> = ({ reset }) => {
                     <input id='password' value={formik.values.password} onChange={formik.handleChange} type="password" placeholder='senha' className='input' />
                 </label>
                 <label>
-                    <input id='confirmPassword' value={formik.values.password} onChange={formik.handleChange} type="password" placeholder='confirmar senha' className='input' />
+                    <input id='confirmPassword' onChange={formik.handleChange} type="password" placeholder='confirmar senha' className='input' />
                 </label>
                 <label>
-                    <input id='apartamento' value={formik.values.apartamento} onChange={formik.handleChange} type="number" placeholder='unidade/apartamento' className='input' />
-                </label>
-                <label>
-                    <input id='foto' value={formik.values.foto} onChange={formik.handleChange} type="text" placeholder='link da foto' className='input' />
+                    <input id='apto' value={formik.values.apto} onChange={formik.handleChange} type="number" placeholder='unidade/apartamento' className='input' />
                 </label>
                 <button type="submit" className='w-[335px] h-[39px] bg-[#76BB4C] rounded-lg font-bold text-[18px]'>Confirmar</button>
             </form>

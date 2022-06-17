@@ -14,9 +14,9 @@ export default function Header() {
   }
   return (
     <div className='flex flex-row items-center justify-between px-11 py-4 shadow-lg'>
-        <img src={Logo} alt='Parrot logo'/>
+        <img src={Logo} alt='Parrot logo' className=''/>
         <div className='flex flex-row items-center justify-center'>
-            <h1 className='text-[#76BB4C] font-bold text-[2vw]'>Olá, {user.nome} |</h1>
+            <h1 className='text-[#76BB4C] font-bold text-[1rem]'>Olá, {user.nome} |</h1>
             <button onClick={handleLogout} className='text-[16px] text-[#6033AA] mx-2'>sair</button>
         </div>
     </div>
