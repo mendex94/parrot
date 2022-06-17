@@ -40,7 +40,7 @@ Linguagens e ferramentas utilizadas nesse desafio:
 
 <h3>Desenvolvedores</h3>
 
- <img src="https://avatars.githubusercontent.com/u/89550095?v=4" width=115>Cintia Macchia(https://github.com/CintiaMacchia)
- <img src="https://avatars.githubusercontent.com/u/59844712?v=4" width=115>Felipe Mendes(https://github.com/mendex94) 
- <img src="https://avatars.githubusercontent.com/u/95004294?v=4" width=115>TikYokoyama(https://github.com/TikYokoyama)
- <img src="https://avatars.githubusercontent.com/u/73663600?v=4" width=115>Pedro Oliveira(https://github.com/OSrB2)
+ <img src="https://avatars.githubusercontent.com/u/89550095?v=4" width=115>Cintia Macchia(https://github.com/CintiaMacchia)</br>
+ <img src="https://avatars.githubusercontent.com/u/59844712?v=4" width=115>Felipe Mendes(https://github.com/mendex94)</br>
+ <img src="https://avatars.githubusercontent.com/u/95004294?v=4" width=115>TikYokoyama(https://github.com/TikYokoyama)</br>
+ <img src="https://avatars.githubusercontent.com/u/73663600?v=4" width=115>Pedro Oliveira(https://github.com/OSrB2)</br>
